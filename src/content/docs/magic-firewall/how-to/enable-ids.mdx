@@ -80,15 +80,10 @@ Similarly, sending a patch request with the `enabled` field set to `true` will e
 
 ## IDS rules
 
-IDS rules are run on a subset of packets.
+IDS rules are run on a subset of packets. IDS also supports the current flows:
 
-IDS will run on WAN-to-Internet traffic if Gateway upgrade is disabled. IDS also supports the current flows:
-
-| Flow | Magic Firewall | IDS | 
-| ---- | ---- | --- |
-| WAN-to-Gateway | Applied | Not applied |
-| WAN-to-Cloudflare Tunnel | Applied | Not applied |
-| WAN-to-WAN | Applied | Applied | 
+- Magic WAN to Magic WAN.
+- Magic Transit in both directions.
 
 ## Next steps
 
