@@ -12,7 +12,7 @@ entries:
   - publish_date: "2025-01-15"
     title: Logpush for SSH command logs
     description: |-
-      Access for Infrastructure now supports exporting SSH command logs using [Logpush](/cloudflare-one/insights/logs/logpush/).
+      Enterprise customers can now use Logpush to export SSH command logs for Access for Infrastructure targets.
   - publish_date: "2024-12-04"
     title: SCIM GA for Okta and Microsoft Entra ID
     description: |-
@@ -20,7 +20,7 @@ entries:
   - publish_date: "2024-10-23"
     title: SSH with Access for Infrastructure
     description: |-
-      Admins can now use [Access for Infrastructure](/cloudflare-one/connections/connect-networks/use-cases/ssh/ssh-infrastructure-access/) to manage privileged access to SSH servers. Access for Infrastructure provides improved control and visibility over who accessed what service and what they did during their SSH session, while also eliminating the risk and overhead associated with managing SSH keys.
+      Admins can now use [Access for Infrastructure](/cloudflare-one/connections/connect-networks/use-cases/ssh/ssh-infrastructure-access/) to manage privileged access to SSH servers. Access for Infrastructure provides improved control and visibility over who accessed what service and what they did during their SSH session. Access for Infrastructure also eliminates the risk and overhead associated with managing SSH keys by using short-lived SSH certificates to access SSH servers.
   - publish_date: "2024-08-26"
     title: Reduce automatic seat deprovisioning minimum to 1 month, down from 2 months.
     description: |-
