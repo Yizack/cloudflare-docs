@@ -42,12 +42,12 @@ jobs:
         run: |
           PR=$(gh pr list --head ${{ github.ref_name }} --limit 1 --json number --jq '.[].number')
 
-          if [ -z "$PR" ]; then
+          if [ -n "$PR" ]; then
             URL=$(cat wrangler-logs.json | jq 'select(.type=="version-upload") | .preview_url')
 
-            if [ -z "$URL" ]; then
+            if [ -n "$URL" ]; then
               BODY="**Preview URL:** $URL"
-              gh pr comment "$PR" --repo ${{ github.repository }} --edit-last --body-file -
+              echo -e "$BODY" | gh pr comment "$PR" --edit-last --body-file -
             fi
           fi
       - uses: actions/cache/save@v4
