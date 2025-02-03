@@ -17,8 +17,6 @@ By default, Cloudflare triggers your fallback if a model request returns an erro
 
 ### Example
 
-In the following example, a request first goes to the [Workers AI](/workers-ai/) Inference API. If the request fails, it falls back to OpenAI.
-
 In the following example, a request first goes to the [Workers AI](/workers-ai/) Inference API. If the request fails, it falls back to OpenAI. The response header `cf-aig-step` indicates which provider successfully processed the request.
 
 1. Sends a request to Workers AI Inference API.
