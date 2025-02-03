@@ -5,6 +5,12 @@ productLink: "/workflows/"
 productArea: Developer platform
 productAreaLink: /workers/platform/changelog/platform/
 entries:
+  - publish_date: "2024-02-18"
+    title: "New `waitForEvent` API"
+    description: |-
+      You can now send events to a running Workflow using the new [`waitForEvent`](/workflows/build/events-and-parameters/) API.
+
+      This allows you to prompt for human-in-the-loop interactions, such as requiring approvals via email, text or API; requesting more data from an upstream system; and/or incoming webhooks, such as those from a payment provider or billing system.
   - publish_date: "2024-12-19"
     title: "Better instance control, improved queued logic, and step limit increased"
     description: |-
