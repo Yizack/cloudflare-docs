@@ -79,12 +79,11 @@ openssl x509 -in <CUSTOM-ROOT-CERT>.pem -text
   <TabItem label="API">
 	1. Verify that the certificate is installed on your devices.
 	2. <Render file="upload-mtls-cert" params={{ one: " " }} />
-	3. Deploy the certificate in Gateway using the certificate's UUID with the [Patch Zero Trust account configuration endpoint](/api/resources/zero_trust/subresources/gateway/subresources/configurations/methods/edit/).
+	3. Deploy the certificate in Gateway using the certificate's UUID with the [Patch Zero Trust account configuration endpoint](/api/resources/zero_trust/subresources/gateway/subresources/configurations/methods/edit/). For example:
     	```bash {10}
     	curl --request PATCH \
-    	"https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/configuration" \
-    	--header "X-Auth-Email: <EMAIL>" \
-    	--header "X-Auth-Key: <API_KEY>" \
+    	"https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/gateway/configuration" \
+    	--header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
     	--header "Content-Type: application/json" \
     	--data '{
     		"settings": {
@@ -125,9 +124,8 @@ openssl x509 -in <CUSTOM-ROOT-CERT>.pem -text
 	4. Activate the certificate for use in inspection with the [Activate a Zero Trust certificate endpoint](/api/resources/zero_trust/subresources/gateway/subresources/certificates/methods/activate/).
 			```bash
 			curl --request POST \
-			"https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/certificates/{certificate_id}/activate" \
-			--header "X-Auth-Email: <EMAIL>" \
-			--header "X-Auth-Key: <API_KEY>"
+			"https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/gateway/certificates/$CERTIFICATE_ID/activate" \
+			--header "Authorization: Bearer $CLOUDFLARE_API_TOKEN"
 			```
 			The response will return the certificate and its current deployment status. For example:
 			```json {6,12}
