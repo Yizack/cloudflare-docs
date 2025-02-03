@@ -47,7 +47,7 @@ jobs:
 
             if [ -n "$URL" ]; then
               BODY="**Preview URL:** $URL"
-              echo -e "$BODY" | gh pr comment "$PR" --edit-last --body-file -
+              gh pr comment "$PR" --edit-last --body "$BODY" || gh pr comment "$PR" --body "$BODY"
             fi
           fi
       - uses: actions/cache/save@v4
