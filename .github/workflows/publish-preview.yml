@@ -44,7 +44,7 @@ jobs:
           PR=$(gh pr list --head ${{ github.ref_name }} --limit 1 --json number --jq '.[].number')
 
           if [ -n "$PR" ]; then
-            URL=$(cat wrangler-logs.json | jq 'select(.type=="version-upload") | .preview_url')
+            URL=$(cat wrangler-logs.json | jq -r 'select(.type=="version-upload") | .preview_url')
 
             if [ -n "$URL" ]; then
               BODY="**Preview URL:** $URL"
