@@ -25,8 +25,8 @@ Many of these limits will increase during Pipelines' public beta period. [Follow
 ## Performance charecteristics
 Pipelines are performant up to the following limits:
 - 20,000 requests per second
-- 20 MB / s.
+- 20 MB / s
 
 Consistently exceeding these limits will result may result in requests being rejected by your Pipeline, with a status code of 429, indicating that your Pipeline is unable to keep up with the volume.
 
-These performance limits apply simultaneously. For example, if you are sending 100 byte records, you can safely make up to 20,000 requests per second. However, if you are sending 1 MB records, you will only be able to make 20 requests per second.
+These performance limits apply simultaneously. For example, if you are sending 100 byte records, you can safely make up to 20,000 requests per second. However, if you are sending 1 MB records, you will only be able to make 20 requests per second, before you see degraded performance.
