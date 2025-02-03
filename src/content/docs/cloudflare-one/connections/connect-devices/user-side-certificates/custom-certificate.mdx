@@ -143,7 +143,7 @@ openssl x509 -in <CUSTOM-ROOT-CERT>.pem -text
 
 4. (Optional) Verify the certificate is installed on your user's devices either [with WARP](/cloudflare-one/connections/connect-devices/user-side-certificates/automated-deployment/) or [manually](/cloudflare-one/connections/connect-devices/user-side-certificates/manual-deployment/).
 
-5. Deploy the certificate in Gateway using the certificate's UUID with the [Patch Zero Trust account configuration endpoint](/api/resources/zero_trust/subresources/gateway/subresources/configurations/methods/edit/). For example:
+5. Use the [Patch Zero Trust account configuration endpoint](/api/resources/zero_trust/subresources/gateway/subresources/configurations/methods/edit/) to turn on the certificate for use in inspection. For example:
 
    ```sh {10}
    curl --request PATCH \
@@ -152,43 +152,15 @@ openssl x509 -in <CUSTOM-ROOT-CERT>.pem -text
    --header "Content-Type: application/json" \
    --data '{
    	"settings": {
-   		"custom_certificate": {
-   			"enabled": true,
-   			"id": "2458ce5a-0c35-4c7f-82c7-8e9487d3ff60"
+   		"certificate": {
+   			"id": "$CERTIFICATE_ID",
+        "in_use": true
    		}
    	}
    }'
    ```
 
-   The response will return the pending status of the certificate. For example:
-
-   ```json {13}
-   {
-   	"success": true,
-   	"errors": [],
-   	"messages": [],
-   	"result": {
-   		"settings": {
-   			"antivirus": {},
-   			"block_page": {},
-   			"custom_certificate": {
-   				"enabled": true,
-   				"id": "2458ce5a-0c35-4c7f-82c7-8e9487d3ff60",
-   				"binding_status": "pending_deployment",
-   				"qs_pack_id": "50a78g31-a5b5-4k58d-a6ed-b0ac17da9k05"
-   			},
-   			"tls_decrypt": {},
-   			"activity_log": {},
-   			"browser_isolation": {},
-   			"fips": {}
-   		}
-   	},
-   	"created_at": "2014-01-01T05:20:00.12345Z",
-   	"updated_at": "2014-01-01T05:20:00.12345Z"
-   }
-   ```
-
-Once `binding_status` changes to `active`, Gateway will sign your traffic using the custom root certificate and private key. If you disable the custom certificate, Gateway will revert to the default Cloudflare certificate generated for your Zero Trust account.
+Once `in-use` is set to `true`, Gateway will sign your traffic using the custom root certificate and private key. If you turn off or deactivate the custom certificate, Gateway will revert to the next available Cloudflare certificate generated for your Zero Trust account.
 
 </TabItem>
 
