@@ -141,7 +141,7 @@ As with the [request timeout](/ai-gateway/configuration/request-handling/#univer
 
 If set on a [provider](/ai-gateway/providers/) request, a request retry will automatically retry failed requests up to five times. On the final retry attempt, your gateway will wait until the request completes, regardless of how long it takes.
 
-For a provider-specific endpoint, configure the timeout value by adding different header values:
+For a provider-specific endpoint, configure the retry settings by adding different header values:
 
 - `cf-aig-max-attempts` (number)
 - `cf-aig-retry-delay` (number)
