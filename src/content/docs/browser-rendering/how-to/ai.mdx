@@ -131,8 +131,7 @@ async function getLLMResult(env, prompt: string, schema?: any) {
         messages: [{
             role: "user",
             content: prompt
-        }
-        ],
+        }],
     };
     const aiUrl = `https://api.cloudflare.com/client/v4/accounts/${env.ACCOUNT_ID}/ai/run/${model}`
 
@@ -229,8 +228,7 @@ async function getLLMResult(env, prompt: string, schema?: any) {
         messages: [{
             role: "user",
             content: prompt
-        }
-        ],
+        }],
     };
     const aiUrl = `https://api.cloudflare.com/client/v4/accounts/${env.ACCOUNT_ID}/ai/run/${model}`
 
