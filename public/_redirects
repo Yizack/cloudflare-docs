@@ -1530,6 +1530,11 @@
 /workers/runtime-apis/fetch-event/ /workers/runtime-apis/handlers/fetch/ 301
 /workers/runtime-apis/add-event-listener/ /workers/reference/migrate-to-module-workers/ 301
 /workers/runtime-apis/tail-event/ /workers/runtime-apis/handlers/tail/ 301
+/workers/configuration/sites/configuration/ /workers/static-assets/binding/ 301
+/workers/configuration/sites/ /workers/static-assets/ 301
+/workers/configuration/sites/start-from-existing/ /workers/static-assets/get-started/ 301
+/workers/configuration/sites/start-from-scratch/ /workers/static-assets/get-started/ 301
+/workers/configuration/sites/start-from-worker/ /workers/static-assets/get-started/ 301
 /workers/wrangler/workers-kv/ /kv/ 301
 /workers/databases/native-integrations/momento/ /workers/configuration/integrations/momento/ 301
 /workers/databases/connect-to-postgres/ /hyperdrive/learning/connect-to-postgres/ 301
